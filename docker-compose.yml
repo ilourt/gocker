@@ -1,0 +1,9 @@
+version: '3'
+services:
+  golang:
+    build: .
+    image: golang-app
+    volumes:
+      - ./go:/go
+      - ./src:/go/src/app
+    command: sh ./start-dev.sh
