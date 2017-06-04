@@ -26,9 +26,9 @@ The folder **src** corresponds to the folder containing the source code of your 
 
 ## Built With
 
-* (Docker)[https://docker.com] - The linux container
-* (Docker compose)[https://docs.docker.com/compose/] - Util used to manage docker images
-* (Golang)[https://golang.org] - Language for which this project is used
+* [Docker](https://docker.com) - The linux container
+* [Docker compose](https://docs.docker.com/compose/) - Util used to manage docker images
+* [Golang](https://golang.org) - Language for which this project is used
 
 ## Author
 
