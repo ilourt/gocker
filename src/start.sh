@@ -3,5 +3,9 @@
 go-wrapper download
 go-wrapper install
 
-go get github.com/tockins/realize
-realize run
+if [ "$WATCH" = true ] ; then
+  go get github.com/tockins/realize
+  realize run
+else
+  go build -o goapp . && ./goapp
+fi

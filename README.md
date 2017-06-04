@@ -23,6 +23,8 @@ Then feel free to add other docker services in the **docker-compose.yml**  files
 $> docker-compose up
 ```
 
+It is possible to disable automatic reload in development. In order to do this simply change the value of **WATCH** to anything different than true in the **.env** file. In this case you will have to relaunch <pre>$> docker-compose up</pre> each time you want to rebuild.
+
 **Production**
 
 ```sh
