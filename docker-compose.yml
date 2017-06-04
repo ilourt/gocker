@@ -6,4 +6,4 @@ services:
     volumes:
       - ./go:/go
       - ./src:/go/src/app
-    command: sh ./start-dev.sh
+    command: sh ./start.sh

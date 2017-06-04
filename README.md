@@ -1,12 +1,7 @@
 # Gocker
 
-Gocker is a starter project using docker and golang.
+Gocker is a starter project using docker and golang in development with automatic rebuild.
 
-There is 2 different mode:
-
-* dev which automatically rerun the project when a file is changed
-
-* prod which build and run the project
 
 ## Getting started
 
@@ -19,13 +14,6 @@ Then feel free to add other docker services in the **docker-compose.yml**  files
 
 ### File structure
 
-#### Root folder
-
-At the root folder there are 2 docker compose files:
-
-* **docker-compose.yml** used for development
-* **docker-compose-prod.yml** used for production
-
 #### Go folder
 
 The folder **go** is a volume which represents the go folder of the docker image. It allows to use code autocompletion in your favorite IDE.
@@ -33,7 +21,7 @@ The folder **go** is a volume which represents the go folder of the docker image
 
 #### Src folder
 
-The folder **src** corresponds to the folder containing the source code of your app. It the folder which will be build and run in the production mode or automatically rerun in the case of development mode. At the root of this folder there are 2 files: **start-dev.sh** and **start-prod.sh**. These files are scripts run when the docker image start, they allow to download and install dependencies and then to run the project.
+The folder **src** corresponds to the folder containing the source code of your app. It the folder which will be automatically rerun. At the root of this folder there is a file **start.sh**. It is the script run when the docker image start, it allows to download and install dependencies and then to run the project.
 
 
 ## Built With
