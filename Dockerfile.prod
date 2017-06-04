@@ -1,0 +1,12 @@
+FROM golang:1.8 AS build-env
+
+WORKDIR /go/src/app
+COPY src .
+RUN go-wrapper download
+RUN go-wrapper install
+RUN go build -o goapp
+
+FROM alpine:latest
+WORKDIR /app
+COPY --from=build-env /go/src/app/goapp /app/goapp
+ENTRYPOINT ./goapp

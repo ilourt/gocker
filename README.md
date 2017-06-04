@@ -1,16 +1,36 @@
 # Gocker
 
-Gocker is a starter project using docker and golang in development with automatic rebuild.
+Gocker is a starter project using docker and golang with automatic rebuild in development mode.
 
 
 ## Getting started
 
+### Prerequisites
+
+In order to run this project you need to have Docker > 1.17.05 installed for building the production image.
+
+### Installing
 To use this to start your golang project, simply do:
 ```sh
 $> git clone https://github.com/ilourt/gocker
 ```
 
 Then feel free to add other docker services in the **docker-compose.yml**  files to suit the needs of your app.
+
+**Development**
+
+```sh
+$> docker-compose up
+```
+
+**Production**
+
+```sh
+$> docker build -t gocker-prod:lates -f ./Dockerfile.prod .
+$> docker run gocker-prod:latest
+```
+
+With the hello world example, the size of the production docker image is 5.52MB.
 
 ### File structure
 
