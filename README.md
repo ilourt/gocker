@@ -26,7 +26,7 @@ $> docker-compose up
 **Production**
 
 ```sh
-$> docker build -t gocker-prod:lates -f ./Dockerfile.prod .
+$> docker build -t gocker-prod:latest -f ./Dockerfile.prod .
 $> docker run gocker-prod:latest
 ```
 
