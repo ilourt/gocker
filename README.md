@@ -53,3 +53,5 @@ The folder **src** corresponds to the folder containing the source code of your 
 ## Author
 
 **Irwin Lourtet** [https://github.com/ilourt](https://github.com/ilourt)
+
+Thanks to people on [reddit](https://redd.it/6f6lil) who helps me improve it.
