@@ -6,7 +6,7 @@ RUN go-wrapper download
 RUN go-wrapper install
 RUN go build -o goapp
 
-FROM alpine:latest
+FROM scratch
 WORKDIR /app
 COPY --from=build-env /go/src/app/goapp /app/goapp
-ENTRYPOINT ./goapp
+ENTRYPOINT ["./goapp"]
