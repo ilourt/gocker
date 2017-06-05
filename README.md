@@ -36,14 +36,10 @@ With the hello world example, the size of the production docker image is 5.52MB.
 
 ### File structure
 
-#### Go folder
-
 The folder **go** is a volume which represents the go folder of the docker image. It allows to use code autocompletion in your favorite IDE.
 > With atom you could use the package [atomenv](https://atom.io/packages/atomenv) to specify the $GOPATH on a project basis
 
-#### Src folder
-
-The folder **src** corresponds to the folder containing the source code of your app. It the folder which will be automatically rerun. At the root of this folder there is a file **start.sh**. It is the script run when the docker image start, it allows to download and install dependencies and then to run the project.
+The folder **go/src/app** corresponds to the folder containing the source code of your app. It the folder which will be automatically rerun. At the root of this folder there is a file **start.sh**. It is the script run when the docker image start, it allows to download and install dependencies and then to run the project.
 
 
 ## Built With

@@ -5,7 +5,6 @@ services:
     image: golang-app
     volumes:
       - ./go:/go
-      - ./src:/go/src/app
     command: sh ./start.sh
     env_file:
       - .env

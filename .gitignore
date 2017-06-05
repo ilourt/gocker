@@ -1,1 +1,7 @@
 go/*
+!go/src/
+go/src/*
+!go/src/app/
+go/src/app/goapp
+
+**/debug
