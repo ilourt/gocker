@@ -1,7 +1,11 @@
 version: '3'
 services:
   golang:
-    build: .
+    build:
+      context: .
+      args:
+        USER: $USER
+        UID: $UID
     image: golang-app
     volumes:
       - ./go:/go

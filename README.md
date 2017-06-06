@@ -25,6 +25,12 @@ $> docker-compose up
 
 It is possible to disable automatic reload in development. In order to do this simply change the value of **WATCH** to anything different than true in the **.env** file. In this case you will have to relaunch <pre>$> docker-compose up</pre> each time you want to rebuild.
 
+For dependencies management [dep](https://github.com/golang/dep) is used. Be carefful, it is now in alpha mode but must become the future official tool to manage dependencies. If you prefer you can disable it by setting the value od **GO_DEP** to false in the *.env** file.
+
+In the Dockerfile, there is the creation of a user to create file on the disk as non root user. By default the user is *ilourt* with a UID of *1000*. You can change these values in **.env** file.
+
+> To know the uid of your current user use the following command: <pre>$> id </pre>
+
 **Production**
 
 ```sh
