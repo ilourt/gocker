@@ -4,9 +4,9 @@ services:
     build:
       context: .
       args:
-        USER: $USER
-        UID: $UID
-    image: golang-app
+        USER: gocker
+        UID: 1000
+    image: gocker
     volumes:
       - ./go:/go
     command: sh ./start.sh

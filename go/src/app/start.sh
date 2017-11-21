@@ -10,8 +10,11 @@ else
 fi
 
 if [ "$WATCH" = true ] ; then
-  go get github.com/tockins/realize
-  realize run
+  go get github.com/cortesi/modd/cmd/modd
+  modd
 else
-  go build -o goapp . && ./goapp
+  go build -o goapp .
+  if [ "$EXEC" = true ] ; then
+    ./goapp
+  fi
 fi
