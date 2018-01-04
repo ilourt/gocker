@@ -1,11 +1,7 @@
 FROM golang:1.8 AS build-env
 
 WORKDIR /go/src/app
-<<<<<<< HEAD
 COPY ./go/src/app .
-=======
-COPY go/src/app .
->>>>>>> 4c821b6491084ebe9fd7ea2a2de4e9e8684c49e8
 RUN go-wrapper download
 RUN go-wrapper install
 RUN go build -o goapp
