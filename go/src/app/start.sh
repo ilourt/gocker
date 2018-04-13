@@ -9,12 +9,19 @@ else
   go-wrapper install
 fi
 
+if [ "$DEBUG" = true ] ; then
+  go get github.com/cortesi/modd/cmd/modd
+  modd -f=./modd-debug.conf
+fi
+
 if [ "$WATCH" = true ] ; then
   go get github.com/cortesi/modd/cmd/modd
   modd
-else
-  go build -o goapp .
+fi
+
+if [ "$BUILD" = true ] ; then
+  go build -o $BIN_NAME .
   if [ "$EXEC" = true ] ; then
-    ./goapp
+    ./$BIN_NAME
   fi
 fi
