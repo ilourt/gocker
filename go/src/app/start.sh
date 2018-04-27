@@ -5,8 +5,7 @@ if [ "$GO_DEP" = true ]; then
   dep init
   dep ensure -update
 else
-  go-wrapper download
-  go-wrapper install
+  go install -v .
 fi
 
 if [ "$WATCH" = true ] ; then
