@@ -17,21 +17,35 @@ $> git clone https://github.com/ilourt/gocker
 
 Then feel free to add other docker services in the **docker-compose.yml**  files to suit the needs of your app.
 
-**Development**
+#### Development
 
 ```sh
 $> docker-compose up
 ```
 
-It is possible to disable automatic reload in development. In order to do this simply change the value of **WATCH** to anything different than true in the **.env** file. In this case you will have to relaunch <pre>$> docker-compose up</pre> each time you want to rebuild.
+It is possible to disable automatic rebuild in development. In order to do this simply change the value of **WATCH** to anything different than true in the **.env** file. In this case you will have to relaunch `$> docker-compose up` each time you want to rebuild.
+> In case of development of **server** (like an http server) replace in *modd.conf* "prep: go run ./main.go" by "daemon: go build -o goapp ./main.go && ./goapp"
+
+To create binary set the **BUILD** to **true** in the env file. The binary name can be customized by setting the **BIN_NAME** variable.
 
 For dependencies management [dep](https://github.com/golang/dep) is used. Be carefful, it is now in alpha mode but must become the future official tool to manage dependencies. If you prefer you can disable it by setting the value od **GO_DEP** to false in the *.env** file.
 
 In the Dockerfile, there is the creation of a user to create file on the disk as non root user. By default the user is *ilourt* with a UID of *1000*. You can change these values in **.env** file.
 
-> To know the uid of your current user use the following command: <pre>$> id </pre>
+> To know the uid of your current user use the following command:`$> id `
 
-**Production**
+##### Debugging
+
+It is possible to use **delve** to debug the project. In order to use it:
+* set the **DEBUG** variable to **true**
+* install delve on the host
+* connect delve on the host to the delve headless server running in the container
+  ```sh
+  $> dlv connect localhost:2345
+  ```
+  the port can be customized in **modd-debug.conf**. If you modify the port don't forget to update the **docker-compose.yml**.
+
+#### Production
 
 ```sh
 $> docker build -t gocker-prod:latest -f ./Dockerfile.prod .
@@ -56,6 +70,6 @@ The folder **go/src/app** corresponds to the folder containing the source code o
 
 ## Author
 
-**Irwin Lourtet** [https://github.com/ilourt](https://github.com/ilourt)
+**Irwin Lourtet** [https://github.com/ilourt](https://github.com/ilourt)  (<dev@ilourt.com>)
 
 Thanks to people on [reddit](https://redd.it/6f6lil) who helps me improve it.
