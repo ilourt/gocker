@@ -24,7 +24,11 @@ $> docker-compose up
 ```
 
 It is possible to disable automatic rebuild in development. In order to do this simply change the value of **WATCH** to anything different than true in the **.env** file. In this case you will have to relaunch `$> docker-compose up` each time you want to rebuild.
-> In case of development of **server** (like an http server) replace in *modd.conf* "prep: go run ./main.go" by "daemon: go build -o goapp ./main.go && ./goapp"
+> In case of development of **server** (like an http server) replace in *modd.conf* "prep: go run ./*.go" by :
+  ```
+  prep: go build -o $BIN_NAME ./*.go 
+  daemon: ./$BIN_NAME
+  "
 
 To create binary set the **BUILD** to **true** in the env file. The binary name can be customized by setting the **BIN_NAME** variable.
 
