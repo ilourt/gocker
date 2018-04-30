@@ -9,8 +9,9 @@ else
 fi
 
 if [ "$DEBUG" = true ] ; then
+  go get github.com/derekparker/delve/cmd/dlv
   go get github.com/cortesi/modd/cmd/modd
-  modd -f=./modd-debug.conf
+  modd -f ./modd-debug.conf
 fi
 
 if [ "$WATCH" = true ] ; then
