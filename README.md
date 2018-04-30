@@ -28,7 +28,7 @@ It is possible to disable automatic rebuild in development. In order to do this 
   ```
   prep: go build -o $BIN_NAME ./*.go 
   daemon: ./$BIN_NAME
-  "
+  ```
 
 To create binary set the **BUILD** to **true** in the env file. The binary name can be customized by setting the **BIN_NAME** variable.
 
