@@ -1,7 +1,5 @@
-go/*
-!go/src/
-go/src/*
-!go/src/app/
-go/src/app/goapp
-
+.vscode
+.gopath
+vendor
 **/debug
+**/goroot

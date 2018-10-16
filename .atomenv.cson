@@ -1,2 +1,0 @@
-env:
-  GOPATH: "$GOPATH:$ATOM_PROJECT_PATH/go"
