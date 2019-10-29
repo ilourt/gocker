@@ -2,7 +2,7 @@
 
 Gocker is a starter project using docker and golang with automatic rebuild in development mode.
 
-* Project not maintained*
+**Project not maintained**
 
 
 ## Getting started
